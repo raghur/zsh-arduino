@@ -7,7 +7,7 @@ Build, upload and monitor arduino sketches from zsh. Reuses `.vscode/arduino.jso
 2. `jq` - sudo apt install jq
 
 ### Setup
-. clone this somewhere in your $FPATH
-. In your sketch folder
-    - `ar_build`, `ar_upload`, `ar_env`
+1. clone this somewhere in your $FPATH
+2. In your sketch folder, following are available
+    - `ar_build`, `ar_upload`, `ar_env`, `ar_serial`
 
