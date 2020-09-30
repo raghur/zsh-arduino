@@ -1,0 +1,18 @@
+
+ar_build() {
+        if [[ -z $AR_FQBN ]]; then
+            ar_configure
+        fi
+        op=$(arduino-cli compile -v --fqbn=$AR_FQBN $1)
+        error=$?
+        if [[ $error -eq 0 ]]; then
+                AR_BIN=$(echo $op | grep '\.ino\.bin'| cut -d' ' -f5)
+                echo $AR_BIN
+                return 0
+        else
+                echo "build failed!"
+                echo $op
+                return $error
+        fi
+}
+

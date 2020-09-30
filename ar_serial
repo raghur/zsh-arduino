@@ -1,0 +1,5 @@
+
+ar_serial() {
+        miniterm.py $SERIAL 115200
+}
+
