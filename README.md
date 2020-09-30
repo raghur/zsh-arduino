@@ -10,7 +10,7 @@ Build, upload and monitor arduino sketches from zsh. Reuses `.vscode/arduino.jso
 
 #### zplug
 
-* `zplug raghur/zsh-arduino`
+* `zplug "raghur/zsh-arduino"`
 
 #### Manual - Git
 1. clone this somewhere in your $FPATH
