@@ -2,11 +2,11 @@
 function ar_configure()
 {
     vscode=".vscode/arduino.json"
-    command -v jq &> /dev/null || (echo "jq not found in path")
-    if [[ -r $vscode  ]] && [ command -v jq ]; then
+    if [[ -r $vscode  ]] then
             echo "found vscode config"
             AR_FQBN=$(jq -j '.board + ":" + .configuration' $vscode)
             AR_PORT=$(jq -j '.port' $vscode)
+            AR_SERIAL=$AR_PORT
     else
             echo "using defaults"
             AR_UPLOAD=BMPMethod 
