@@ -9,7 +9,7 @@ if [[ -z "$err" ]]; then
     autoload -Uz ar_upload
     autoload -Uz ar_serial
     autoload -Uz ar_env
-    $ACLI completion zsh > _arduino-cli
+    $ACLI completion zsh > "$(0:A)/_arduino-cli"
     # echo "arduino plugin registered"
 else
     echo "zsh-arduino: Commands not found on path: $err; Plugin not registered"
