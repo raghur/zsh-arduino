@@ -1,7 +1,6 @@
 #! /bin/zsh
-LOG=1
 function log() {
-    LOG == 1 && echo $* >> /tmp/zsh-arduino.log
+    [ $ZSH_ARDUINO_LOG ] && (echo $* >> /tmp/zsh-arduino.log)
 }
 JQ=jq
 ACLI=arduino-cli
@@ -18,7 +17,7 @@ if [[ -z "$err" ]]; then
     source _arduino_cli
     # echo "arduino plugin registered"
 else
-    echo "zsh-arduino: Commands not found on path: $err; Plugin not registered"
+    log "zsh-arduino: Commands not found on path: $err; Plugin not registered"
 fi
 
 
