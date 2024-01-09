@@ -1,4 +1,8 @@
 #! /bin/zsh
+LOG=1
+function log() {
+    LOG == 1 && echo $* >> /tmp/zsh-arduino.log
+}
 JQ=jq
 ACLI=arduino-cli
 err=$(command -v $JQ &> /dev/null || printf "%s" $JQ)
